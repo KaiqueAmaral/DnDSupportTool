@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QWidget, QPushButton, QVBoxLayout
+from views.sideBarButton import SideBarButton
 from typing import Optional
 
 
@@ -9,9 +10,9 @@ class SideBarMenu(QWidget):
         
         self.verticalLayout = QVBoxLayout(self)
         
-        self.homeButton = QPushButton("Home")
-        self.characterSheet = QPushButton("Character Sheet")
-        self.Rules = QPushButton("Rules")
+        self.homeButton = SideBarButton("Home")
+        self.characterSheet = SideBarButton("Character Sheet")
+        self.Rules = SideBarButton("Rules")
         
         self.verticalLayout.addWidget(self.homeButton)
         self.verticalLayout.addWidget(self.characterSheet)

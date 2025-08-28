@@ -12,9 +12,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.centralWidget)
 
         self.mainLayout = QHBoxLayout(self.centralWidget)
-        
-        
-        
+                
         
         self.sideBarMenu = SideBarMenu()
         self.addWidgetToMainLayout(self.sideBarMenu)
