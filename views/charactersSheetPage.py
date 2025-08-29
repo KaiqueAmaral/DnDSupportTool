@@ -1,14 +1,12 @@
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel
 from typing import Optional
-from views.constants import SIDE_BAR_HOME_BUTTON_NAME
+from views.constants import SIDE_BAR_CHARACTER_SHEET_BUTTON_NAME
 
 
-class HomePage(QWidget):
+class CharactersSheetPage(QWidget):
     def __init__(self, parent: Optional['QWidget'] = None, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
-        
-        self.setObjectName(SIDE_BAR_HOME_BUTTON_NAME)
+        self.setObjectName(SIDE_BAR_CHARACTER_SHEET_BUTTON_NAME)
         self.layout = QHBoxLayout(self)
-        self.layout.addWidget(QLabel("<h1>Welcome to DnD5e support tool </h1>"))
         
-        
+        self.layout.addWidget(QLabel("<h1>Character sheet Page</h1>"))

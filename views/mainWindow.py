@@ -3,6 +3,7 @@ from views.sideBarMenu import SideBarMenu
 from views.homePage import HomePage
 from views.contentArea import ContentArea
 from typing import Optional
+from PySide6.QtCore import Slot
 
 
 
@@ -16,20 +17,20 @@ class MainWindow(QMainWindow):
         self.mainLayout = QHBoxLayout(self.centralWidget)
         
         self.contentArea = ContentArea()    
-        self.sideBarMenu = SideBarMenu(self.contentArea)
-                
+        self.sideBarMenu = SideBarMenu()             
         self.addWidgetToMainLayout(self.sideBarMenu)     
         self.addWidgetToMainLayout(self.contentArea)
         
-        self._configPages()
+        self.sideBarMenu.pageChange.connect(self._switchPageContentArea)
         
         self.setWindowTitle("DnD5e support tool")
         
         
     def addWidgetToMainLayout(self, widget: QWidget):
         self.mainLayout.addWidget(widget)
+    
+    @Slot(str)
+    def _switchPageContentArea(self, pageName: str):
         
-    def _configPages(self):
-        self.pages = {
-            "home": HomePage()
-        }
+        self.contentArea.setCurrentWidget(self.contentArea.pages[pageName])
+        
