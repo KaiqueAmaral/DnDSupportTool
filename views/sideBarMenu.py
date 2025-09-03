@@ -13,6 +13,10 @@ class SideBarMenu(QWidget):
         
         self.verticalLayout = QVBoxLayout(self)
         
+        # TODO: Passar valores hardcoded para variáveis
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setContentsMargins(0,0,0,0)
+        
         self._createMenuButtons()
         self._createMenuButtonsSlots()
         
