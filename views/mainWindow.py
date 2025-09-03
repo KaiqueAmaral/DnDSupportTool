@@ -1,9 +1,11 @@
-from PySide6.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QStackedWidget
+from PySide6.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QLabel
 from views.sideBarMenu import SideBarMenu
 from views.homePage import HomePage
 from views.contentArea import ContentArea
 from typing import Optional
 from PySide6.QtCore import Slot
+from PySide6.QtGui import QPixmap
+from pathlib import Path
 
 
 
@@ -18,6 +20,7 @@ class MainWindow(QMainWindow):
         
         self.contentArea = ContentArea()    
         self.sideBarMenu = SideBarMenu()             
+        
         self.addWidgetToMainLayout(self.sideBarMenu)     
         self.addWidgetToMainLayout(self.contentArea)
         
